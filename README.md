@@ -18,4 +18,4 @@ Proyek ini merupakan **aplikasi Sistem Informasi Ekstrakurikuler** yang dirancan
 
 - **Front-End**: Wordpress, HTML, CSS, JavaScript
 - **Back-End**: JavaScript, LARAVEL (Rest API)
-- **Database:** MySQL/MariaDB
+- **Database:** MySQL
