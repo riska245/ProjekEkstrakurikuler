@@ -17,4 +17,5 @@ Proyek ini merupakan **aplikasi Sistem Informasi Ekstrakurikuler** yang dirancan
 ## 👩‍💻 Teknologi yang Digunakan
 
 - **Front-End**: Wordpress, HTML, CSS, JavaScript
-- **Back-End**: JavaScript, MySQL
+- **Back-End**: JavaScript, LARAVEL (Rest API)
+- **Database:** MySQL/MariaDB
