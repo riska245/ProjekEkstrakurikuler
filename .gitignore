@@ -20,3 +20,28 @@ rad.json
 *.flf
 #Test results file
 TestResults.xml
+
+# wordpress
+# Ignore WordPress core
+wp-admin/
+wp-includes/
+license.txt
+readme.html
+
+# Uploads (file media, biar ga gede repo)
+wp-content/uploads/
+
+# Config (jangan commit file sensitif)
+wp-config.php
+
+# Cache & backup
+*.log
+*.sql
+*.tar.gz
+*.zip
+
+# IDE & system
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
