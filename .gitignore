@@ -22,12 +22,6 @@ rad.json
 TestResults.xml
 
 # wordpress
-# Ignore WordPress core
-wp-admin/
-wp-includes/
-license.txt
-readme.html
-
 # Uploads (file media, biar ga gede repo)
 wp-content/uploads/
 
