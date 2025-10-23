@@ -1,0 +1,131 @@
+/* gunakan Poppins sebagai font utama (mirip Dribbble) */
+body {
+    font-family: "Poppins", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+        Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji",
+        "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+/* heading sedikit lebih tegas */
+h1,
+h2,
+h3,
+h4 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+}
+
+/* jika masih ada tagline yang pakai Playfair, beri kelas khusus */
+.tagline-serif {
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+}
+/* kecilkan ukuran font global: set root font-size ke 14px (lebih kecil dari 16px default) */
+html {
+    font-size: 14px;
+}
+
+/* gunakan Poppins sebagai font utama (mirip Dribbble) */
+body {
+    font-family: "Poppins", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+        Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji",
+        "Segoe UI Emoji", "Segoe UI Symbol";
+    line-height: 1.3;
+    color: #1f2937;
+} /* heading sedikit lebih tegas tapi ukurannya dikurangi agar proporsional */
+h1 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+h2 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+h3 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 1.125rem;
+}
+h4 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+/* jika masih ada tagline yang pakai Playfair, beri kelas khusus (lebih kecil) */
+.tagline-serif {
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+    font-size: 0.85rem;
+}
+
+header {
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.nav-link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #fd4e0f, #ffffff);
+    border-radius: 2px;
+    transition: all 0.4s ease;
+    opacity: 0;
+}
+
+.nav-link:hover {
+    transform: translateY(-2px) scale(1.05);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+    opacity: 1;
+}
+
+.nav-link svg {
+    transition: transform 0.3s ease;
+}
+
+.nav-link:hover svg {
+    transform: rotate(-5deg) scale(1.1);
+}
+
+@media (max-width: 1025px) {
+    /* hide desktop nav and auth actions when viewport is <=1000px */
+    .desktop-nav {
+        display: none !important;
+    }
+
+    .auth-actions {
+        display: none !important;
+    }
+
+    /* show mobile toggle button when viewport is <=1000px */
+    .mobile-toggle {
+        display: inline-flex !important;
+    }
+
+    /* slightly reduce logo size to avoid wrapping */
+    header .container img {
+        height: 3rem; /* ~48px */
+    }
+
+    /* tighten nav-link spacing on narrow screens (if any desktop nav remains) */
+    .nav-link {
+        gap: 0.4rem;
+    }
+}
