@@ -161,7 +161,8 @@
                     bakat dan minat</p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {{-- terisi otomatis oleh sistem kedepannya --}}
+            {{-- <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Kartu Basket -->
                 <div
                     class="group relative bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
@@ -333,10 +334,9 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             <div class="text-center mt-12">
-                <a href="#"
-                    class="group relative inline-flex items-center justify-center overflow-hidden rounded-lg">
+                <a href="#" class="group relative inline-flex items-center justify-center overflow-hidden rounded-lg">
                     <button
                         class="relative inline-flex items-center gap-2 px-8 py-4 font-semibold text-[#FD4E0F] bg-white border-2 border-[#FD4E0F] rounded-lg transition-all duration-300">
                         <!-- Mengubah z-10 menjadi z-20 dan menambahkan group-hover:text-white -->
@@ -368,14 +368,13 @@
                     mereka melalui kegiatan ekstrakurikuler kami.
                 </p>
 
-                <a href="#"
-                    class="group relative inline-flex items-center justify-center overflow-hidden rounded-lg">
+                <a href="#" class="group relative inline-flex items-center justify-center overflow-hidden rounded-lg">
                     <button
                         class="relative inline-flex items-center gap-2 px-8 py-4 font-semibold text-[#FD4E0F] bg-white border-2 border-[#FD4E0F] rounded-lg transition-all duration-500 group-hover:border-white">
 
                         <!-- Teks berubah jadi putih -->
                         <span class="relative z-20 group-hover:text-white transition-colors duration-500">
-                            Lihat Lebih Banyak
+                            Daftar Sekarang
                         </span>
 
                         <!-- Background fade-in -->

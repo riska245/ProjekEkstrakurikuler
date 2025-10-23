@@ -97,7 +97,7 @@
         <aside id="mobile-sidebar"
             class="fixed inset-y-0 left-0 z-50 w-72 max-w-full bg-[#FD4E0F]/95 backdrop-blur-sm transform -translate-x-full transition-transform duration-300 ease-in-out">
             <div class="h-16 flex items-center px-4 border-b border-white/20">
-                <a href="#" class="flex items-center space-x-3 text-white">
+                <a href="/beranda" class="flex items-center space-x-3 text-white">
                     <img src="{{ asset('image/ChatGPT_Image_23_Okt_2025__10.06.02-removebg-preview (1).png') }}"
                         alt="Logo" class="h-10">
                     <span class="text-xs leading-tight">Your future awaits you
