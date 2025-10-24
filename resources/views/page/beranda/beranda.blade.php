@@ -1,6 +1,6 @@
 @extends('layout.app')
 
-@section('title', 'Dashboard')
+@section('title', 'Beranda - Semua Berawal Dari Niat')
 @section('header')
     <!-- You can add additional header content here if needed -->
 @endsection
@@ -25,14 +25,26 @@
                                 class="absolute inset-0 bg-linear-to-br from-[#FD4E0F]/80 to-[#FD4E0F] opacity-0 hover:opacity-100 transition-opacity duration-300">
                             </div>
                         </a>
-                        <a href="#"
-                            class="relative inline-flex items-center justify-center border-2 border-[#FD4E0F] text-[#FD4E0F] px-6 py-3 rounded-lg font-medium overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 group">
-                            <span class="relative z-10 group-hover:text-white transition-colors duration-300">Pelajari Lebih
-                                Lanjut</span>
+                        <a href="/tentang-kami"
+                            class="relative inline-flex items-center gap-2 px-8 py-4 font-semibold text-[#FD4E0F] bg-white border-2 border-[#FD4E0F] rounded-lg overflow-hidden transition-all duration-300 group hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0">
+
+                            <span class="relative z-20 group-hover:text-white transition-colors duration-300">
+                                Pelajari Lebih Lanjut
+                            </span>
+
+                            <!-- Ikon -->
+                            <svg class="w-5 h-5 relative z-20 group-hover:text-white transition-all duration-300 group-hover:translate-x-1"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
+
+                            <!-- Background animasi -->
                             <div
-                                class="absolute inset-0 bg-[#FD4E0F] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left">
+                                class="absolute inset-0 bg-[#FD4E0F] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 z-10">
                             </div>
                         </a>
+
                     </div>
                 </div>
 
@@ -338,19 +350,22 @@
             <div class="text-center mt-12">
                 <a href="#" class="group relative inline-flex items-center justify-center overflow-hidden rounded-lg">
                     <button
-                        class="relative inline-flex items-center gap-2 px-8 py-4 font-semibold text-[#FD4E0F] bg-white border-2 border-[#FD4E0F] rounded-lg transition-all duration-300">
-                        <!-- Mengubah z-10 menjadi z-20 dan menambahkan group-hover:text-white -->
+                        class="relative inline-flex items-center gap-2 px-8 py-4 font-semibold text-[#FD4E0F] bg-white border-2 border-[#FD4E0F] rounded-lg overflow-hidden transition-all duration-300 group cursor-pointer">
+
+                        <!-- Teks -->
                         <span class="relative z-20 group-hover:text-white transition-colors duration-300">Lihat Lebih
                             Banyak</span>
-                        <!-- Mengubah z-10 menjadi z-20 dan menambahkan group-hover:text-white -->
-                        <svg class="w-5 h-5 relative z-20 group-hover:text-white transition-colors duration-300 group-hover:translate-x-1"
+
+                        <!-- Panah dengan animasi smooth -->
+                        <svg class="w-5 h-5 relative z-20 text-[#FD4E0F] transition-all duration-300 transform group-hover:text-white group-hover:translate-x-1"
                             fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M17 8l4 4m0 0l-4 4m4-4H3" />
                         </svg>
-                        <!-- Background slider tetap z-10 -->
+
+                        <!-- Background slider lebih halus -->
                         <div
-                            class="absolute inset-0 bg-[#FD4E0F] w-full transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 z-10">
+                            class="absolute inset-0 bg-[#FD4E0F] w-full transform scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-500 ease-out z-10">
                         </div>
                     </button>
                 </a>
@@ -368,9 +383,10 @@
                     mereka melalui kegiatan ekstrakurikuler kami.
                 </p>
 
-                <a href="#" class="group relative inline-flex items-center justify-center overflow-hidden rounded-lg">
+                <a href="#"
+                    class="group relative inline-flex items-center justify-center overflow-hidden rounded-lg">
                     <button
-                        class="relative inline-flex items-center gap-2 px-8 py-4 font-semibold text-[#FD4E0F] bg-white border-2 border-[#FD4E0F] rounded-lg transition-all duration-500 group-hover:border-white">
+                        class="relative inline-flex items-center gap-2 px-8 py-4 font-semibold text-[#FD4E0F] bg-white border-2 border-[#FD4E0F] rounded-lg transition-all duration-500 group-hover:border-white cursor-pointer">
 
                         <!-- Teks berubah jadi putih -->
                         <span class="relative z-20 group-hover:text-white transition-colors duration-500">

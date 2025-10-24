@@ -1,0 +1,84 @@
+@keyframes float-slow {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.animate-float-slow {
+    animation: float-slow 4s ease-in-out infinite;
+}
+
+@keyframes bob {
+    0%,
+    100% {
+        transform: translateY(0);
+        opacity: 0.95;
+    }
+
+    50% {
+        transform: translateY(-6px);
+        opacity: 0.85;
+    }
+}
+
+.animate-bob {
+    animation: bob 5s ease-in-out infinite;
+}
+
+@keyframes slow-rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-slow-rotate {
+    animation: slow-rotate 30s linear infinite;
+}
+
+@keyframes slow-pulse {
+    0% {
+        opacity: 0.85;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.6;
+        transform: scale(1.05);
+    }
+
+    100% {
+        opacity: 0.85;
+        transform: scale(1);
+    }
+}
+
+.animate-slow-pulse {
+    animation: slow-pulse 6s ease-in-out infinite;
+}
+
+@keyframes ring-rotate {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+
+    50% {
+        transform: rotate(180deg) scale(1.02);
+    }
+
+    100% {
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+.animate-ring-rotate {
+    animation: ring-rotate 12s linear infinite;
+}

@@ -30,3 +30,16 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+window.addEventListener("load", () => {
+    const preloader = document.getElementById("preloader");
+    const content = document.getElementById("content");
+
+    // Hilangkan preloader dengan transisi halus
+    preloader.style.opacity = "0";
+    preloader.style.transition = "opacity 0.6s ease";
+    setTimeout(() => {
+        preloader.style.display = "none";
+        content.classList.remove("opacity-0");
+    }, 600);
+});
