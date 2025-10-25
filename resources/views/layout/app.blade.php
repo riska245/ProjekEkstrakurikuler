@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'GoEks - Ekstrakurikuler')</title>
     @vite('resources/css/app.css')
+    @vite('resources/js/app.js')
 
     <!-- Google Font: Poppins (Dribbble-like) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -73,14 +74,30 @@
             </nav>
 
             <div class="auth-actions hidden md:flex items-center space-x-3">
-                <a href="#"
-                    class="bg-white text-[#FD4E0F] px-4 py-2 rounded-md font-medium border-2 border-white 
-                    transition-colors duration-300 hover:bg-[#FD4E0F] hover:text-white">Daftar</a>
-                <a href="#"
-                    class="bg-[#FD4E0F] text-white px-4 py-2 rounded-md font-medium border-2 border-white transition-colors duration-300 hover:bg-white hover:text-[#FD4E0F]">
-                    Masuk
-                </a>
+                <div id="guest-actions" class="hidden">
+                    <a href="/daftar"
+                        class="bg-white text-[#FD4E0F] px-4 py-2 rounded-md font-medium border-2 trans border-white transition-colors duration-300 hover:bg-[#FD4E0F] hover:text-white">Daftar</a>
+                    <a href="/masuk"
+                        class="bg-[#FD4E0F] text-white px-4 py-2 rounded-md font-medium border-2 border-white hover:bg-white transition-colors duration-300 hover:text-[#FD4E0F]">Masuk</a>
+                </div>
+                <div id="user-actions" class="flex items-center gap-3">
+
+                    <span id="user-name" class="text-white font-medium truncate"></span>
+
+                    <button onclick="logout()"
+                        class=" cursor-pointer flex items-center gap-1.5 bg-[#FD4E0F] text-white px-4 py-2 rounded-md border-2 border-white transition-all duration-300 hover:bg-white hover:text-[#FD4E0F] focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50">
+                        <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                            class="h-5 w-5">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15m3 0 3-3m0 0-3-3m3 3H9" />
+                        </svg>
+                        <span class="whitespace-nowrap">Keluar</span>
+                    </button>
+
+                </div>
+
             </div>
+
 
             <!-- Mobile menu button -->
             <button id="nav-toggle"
@@ -150,16 +167,32 @@
                     <span class="transition-transform duration-300 group-hover:translate-x-1">Pendaftaran</span>
                 </a>
 
-                <div class="mt-4 space-y-2">
-                    <a href="#"
+                <div id="mobile-user-actions" class="hidden flex-col mt-4 space-y-2">
+                    <span id="mobile-user-name"
+                        class="block text-center text-white font-medium px-3 py-2 rounded-md truncate min-h-8"></span>
+                    <button onclick="logout()"
+                        class="w-full flex items-center justify-center gap-2 bg-[#FD4E0F] text-white px-3 py-2 rounded-md text-center border-2 border-white transition-colors duration-300 hover:bg-white hover:text-[#FD4E0F] cursor-pointer">
+                        <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                            class="h-5 w-5">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15m3 0 3-3m0 0-3-3m3 3H9" />
+                        </svg>
+                        Keluar
+                    </button>
+                </div>
+
+
+                <div id="mobile-guest-actions" class="flex flex-col mt-4 space-y-2">
+                    <a href="/daftar"
                         class="block bg-white text-[#FD4E0F] px-3 py-2 rounded-md text-center border-2 border-white transition-colors duration-300 hover:bg-[#FD4E0F] hover:text-white">
                         Daftar
                     </a>
-                    <a href="#"
+                    <a href="/masuk"
                         class="block bg-[#FD4E0F] text-white px-3 py-2 rounded-md text-center border-2 border-white transition-colors duration-300 hover:bg-white hover:text-[#FD4E0F]">
                         Masuk
                     </a>
                 </div>
+
             </nav>
         </aside>
     </header>
@@ -218,8 +251,6 @@
             </div>
         </div>
     </footer>
-
-
 </body>
 <script src="{{ asset('js/layout.js') }}"></script>
 

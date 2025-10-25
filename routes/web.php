@@ -16,3 +16,12 @@ Route::get('/beranda', function () {
 Route::get('/tentang-kami', function () {
     return view('page.tentang.tentang');
 });
+
+
+// account
+Route::get('/daftar', function () {
+    return view('account.daftar.daftar');
+});
+Route::get('/masuk', function () {
+    return view('account.masuk.masuk');
+});
