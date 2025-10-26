@@ -5,10 +5,10 @@
     <!-- You can add additional header content here if needed -->
 @endsection
 @section('content')
-    <div class="relative bg-[#FD4E0F]/5 rounded-xl overflow-hidden">
+    <div class="relative rounded-xl overflow-hidden">
         <!-- Tambahkan pattern background -->
         <div class="absolute inset-0 opacity-[0.03]"
-            style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23000000\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')">
+            style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23000000\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')">
         </div>
 
         <div class="container mx-auto px-4 py-16">
@@ -18,7 +18,7 @@
                     <p class="text-lg text-gray-600">Bergabunglah dengan berbagai kegiatan ekstrakurikuler yang menarik dan
                         kembangkan potensimu bersama kami.</p>
                     <div class="flex gap-4">
-                        <a href="#"
+                        <a href="#daftar-sekarang"
                             class="relative inline-flex items-center justify-center bg-[#FD4E0F] text-white px-6 py-3 rounded-lg font-medium overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0">
                             <span class="relative z-10">Mulai Sekarang</span>
                             <div
@@ -51,8 +51,8 @@
                 <!-- Update ilustrasi section -->
                 <div class="lg:w-1/2 relative w-full max-w-lg lg:max-w-none mx-auto">
                     <!-- Decorative circles -->
-                    <div class="absolute -top-8 -right-8 w-64 h-64 bg-[#FD4E0F]/10 rounded-full blur-3xl"></div>
-                    <div class="absolute -bottom-8 -left-8 w-64 h-64 bg-[#FD4E0F]/10 rounded-full blur-3xl"></div>
+                    <div class="absolute -top-8 -right-8 w-64 h-64 rounded-full blur-3xl"></div>
+                    <div class="absolute -bottom-8 -left-8 w-64 h-64 rounded-full blur-3xl"></div>
 
                     <!-- Image container with styling -->
                     <div class="relative bg-white p-4 rounded-2xl shadow-lg">
@@ -70,13 +70,11 @@
     </div>
 
     <!-- Fitur Unggulan -->
-    <section class="relative py-24 bg-linear-to-b from-white to-orange-50 overflow-hidden">
+    <section class="relative py-24 bg-linear-to-b0 overflow-hidden">
         <!-- Background decor -->
-        <div
-            class="absolute top-0 right-0 w-md h-112 bg-[#FD4E0F]/10 rounded-full blur-3xl -translate-y-1/3 translate-x-1/3">
+        <div class="absolute top-0 right-0 w-md h-112 rounded-full blur-3xl -translate-y-1/3 translate-x-1/3">
         </div>
-        <div
-            class="absolute bottom-0 left-0 w-md h-112 bg-[#FD4E0F]/10 rounded-full blur-3xl translate-y-1/3 -translate-x-1/3">
+        <div class="absolute bottom-0 left-0 w-md h-112rounded-full blur-3xl translate-y-1/3 -translate-x-1/3">
         </div>
 
         <div class="container mx-auto px-6 relative">
@@ -165,7 +163,7 @@
 
 
     <!-- Ekstrakurikuler Populer -->
-    <section class="py-24 bg-gray-50/50">
+    <section class="py-24 bg-gray-50/50 shadow-lg rounded-2xl">
         <div class="container mx-auto px-6">
             <div class="text-center max-w-2xl mx-auto mb-16">
                 <h2 class="text-3xl md:text-4xl font-extrabold text-gray-800 mb-4">Ekstrakurikuler Populer</h2>
@@ -348,7 +346,8 @@
                 </div>
             </div> --}}
             <div class="text-center mt-12">
-                <a href="#" class="group relative inline-flex items-center justify-center overflow-hidden rounded-lg">
+                <a id="lihat-lebih-banyak" href="#"
+                    class="group relative inline-flex items-center justify-center overflow-hidden rounded-lg">
                     <button
                         class="relative inline-flex items-center gap-2 px-8 py-4 font-semibold text-[#FD4E0F] bg-white border-2 border-[#FD4E0F] rounded-lg overflow-hidden transition-all duration-300 group cursor-pointer">
 
@@ -383,7 +382,7 @@
                     mereka melalui kegiatan ekstrakurikuler kami.
                 </p>
 
-                <a href="#"
+                <a id="daftar-sekarang" href="#"
                     class="group relative inline-flex items-center justify-center overflow-hidden rounded-lg">
                     <button
                         class="relative inline-flex items-center gap-2 px-8 py-4 font-semibold text-[#FD4E0F] bg-white border-2 border-[#FD4E0F] rounded-lg transition-all duration-500 group-hover:border-white cursor-pointer">

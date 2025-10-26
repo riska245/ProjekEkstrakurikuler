@@ -1,4 +1,5 @@
 const loginForm = document.getElementById("loginForm");
+
 loginForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 
@@ -13,6 +14,16 @@ loginForm.addEventListener("submit", async (e) => {
         });
         return;
     }
+
+    // Tampilkan loading SweetAlert
+    Swal.fire({
+        title: "Memproses...",
+        text: "Mohon tunggu sebentar",
+        allowOutsideClick: false,
+        didOpen: () => {
+            Swal.showLoading();
+        },
+    });
 
     try {
         const res = await fetch("/api/masuk", {
@@ -33,10 +44,11 @@ loginForm.addEventListener("submit", async (e) => {
                 localStorage.setItem("user_name", data.user_name);
             }
 
+            // Ganti loading jadi pesan sukses
             Swal.fire({
                 icon: "success",
                 title: "Berhasil masuk",
-                text: `Selamat Datang, ${data.user_name}!`,
+                text: `Selamat datang, ${data.user_name}!`,
                 showConfirmButton: false,
                 timer: 1500,
             }).then(() => {

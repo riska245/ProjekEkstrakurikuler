@@ -14,7 +14,6 @@ function initializeMobileSidebar() {
         closeBtn: document.getElementById("mobile-close"),
     };
 
-    // Check if required elements exist
     if (!elements.sidebar || !elements.overlay) {
         console.warn("Sidebar elements not found");
         return;
@@ -32,12 +31,10 @@ function initializeMobileSidebar() {
         document.body.classList.remove("overflow-hidden");
     }
 
-    // Event listeners
     elements.btn?.addEventListener("click", openSidebar);
     elements.closeBtn?.addEventListener("click", closeSidebar);
     elements.overlay.addEventListener("click", closeSidebar);
 
-    // Close on Escape key
     document.addEventListener("keydown", function (e) {
         if (
             e.key === "Escape" &&
@@ -61,7 +58,6 @@ function initializePreloader() {
             return;
         }
 
-        // Smooth preloader transition
         preloader.style.opacity = "0";
         preloader.style.transition = "opacity 0.6s ease";
 
@@ -83,13 +79,12 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!guest || !user || !userName) return;
 
     const token = localStorage.getItem("auth_token");
-    const name = localStorage.getItem("user_name"); // simpan nama user saat login
+    const name = localStorage.getItem("user_name");
 
     guest.classList.add("hidden");
     user.classList.add("hidden");
 
     if (token && name) {
-        // ubah nama menjadi Camel Case
         const camelCaseName = name
             .toLowerCase()
             .split(" ")
@@ -111,12 +106,13 @@ async function logout() {
         text: "Apakah Anda yakin ingin keluar?",
         icon: "warning",
         showCancelButton: true,
+        confirmButtonColor: "#FD4E0F",
         confirmButtonText: "Ya, keluar",
         cancelButtonText: "Batal",
         reverseButtons: true,
     });
 
-    if (!isConfirmed) return; // batal jika user tekan "Batal"
+    if (!isConfirmed) return;
 
     const token = localStorage.getItem("auth_token");
     if (!token) return;
@@ -125,7 +121,7 @@ async function logout() {
         const res = await fetch("/api/keluar", {
             method: "POST",
             headers: {
-                Authorization: token, // token sudah berformat "Bearer <token>"
+                Authorization: token,
                 "Content-Type": "application/json",
             },
         });
@@ -173,13 +169,11 @@ document.addEventListener("DOMContentLoaded", () => {
         let current = 0;
         user.classList.remove("hidden");
 
-        // Tambahkan span untuk cursor
         userName.innerHTML =
             '<span id="typed-text"></span><span id="cursor">|</span>';
         const typedText = document.getElementById("typed-text");
         const cursor = document.getElementById("cursor");
 
-        // Animasi blink cursor
         setInterval(() => {
             cursor.style.visibility =
                 cursor.style.visibility === "visible" ? "hidden" : "visible";
@@ -207,7 +201,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 i--;
                 if (i <= 0) {
                     clearInterval(deleting);
-                    current = (current + 1) % texts.length; // loop ke teks berikutnya
+                    current = (current + 1) % texts.length;
                     setTimeout(typeEffect, 500);
                 }
             }, 50);
@@ -219,4 +213,39 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.removeItem("auth_token");
         localStorage.removeItem("user_name");
     }
+});
+
+/**
+ * Toastr notification for "Daftar Sekarang" button
+ */
+document.addEventListener("DOMContentLoaded", () => {
+    const daftarBtn = document.getElementById("daftar-sekarang");
+    const token = localStorage.getItem("auth_token");
+
+    if (!daftarBtn) return;
+
+    daftarBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        if (!token) {
+            toastr.warning(
+                "Harap masukkan akun terlebih dahulu",
+                "Peringatan",
+                {
+                    closeButton: true,
+                    progressBar: true,
+                    timeOut: 2000,
+                    positionClass: "toast-top-right",
+                    toastClass: "bg-[#FD4E0F] text-white rounded-lg shadow-lg",
+                }
+            );
+
+            setTimeout(() => {
+                window.location.href = "/masuk";
+            }, 1500);
+            return;
+        }
+
+        window.location.href = "/daftar-eskul";
+    });
 });

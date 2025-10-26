@@ -79,13 +79,16 @@
             <!-- Kontak Kami -->
             <div class="bg-[#FD4E0F] text-white rounded-2xl shadow-xl p-8 md:p-12 transition duration-500 hover:shadow-2xl">
                 <h2 class="text-3xl font-bold mb-4 text-center">Kontak Kami</h2>
-                <p class="text-center mb-8 text-white/90">Kami siap membantu Anda. Kirimkan pesan atau hubungi langsung tim
-                    kami.</p>
+                <p class="text-center mb-8 text-white/90">
+                    Kami siap membantu Anda. Kirimkan pesan atau hubungi langsung tim kami.
+                </p>
 
-                <form action="#" method="POST" class="max-w-2xl mx-auto space-y-4">
+                <form id="contactForm" method="POST" action="{{ route('contact.store') }}"
+                    class="max-w-2xl mx-auto space-y-4">
+                    @csrf
                     <div>
-                        <label for="nama" class="block text-sm font-medium mb-1">Nama</label>
-                        <input type="text" id="nama" name="nama" required
+                        <label for="name" class="block text-sm font-medium mb-1">Nama</label>
+                        <input type="text" id="name" name="name" required
                             class="w-full rounded-lg border border-white/20 bg-white/10 text-white px-4 py-2 transition duration-300 focus:ring-2 focus:ring-white focus:outline-none focus:bg-white/20">
                     </div>
 
@@ -96,8 +99,8 @@
                     </div>
 
                     <div>
-                        <label for="pesan" class="block text-sm font-medium mb-1">Pesan</label>
-                        <textarea id="pesan" name="pesan" rows="4" required
+                        <label for="message" class="block text-sm font-medium mb-1">Pesan</label>
+                        <textarea id="message" name="message" rows="4" required
                             class="w-full rounded-lg border border-white/20 bg-white/10 text-white px-4 py-2 transition duration-300 focus:ring-2 focus:ring-white focus:outline-none focus:bg-white/20"></textarea>
                     </div>
 
@@ -111,8 +114,8 @@
 
                 <div class="mt-10 text-center text-sm text-white/80 space-y-1">
                     <p>Atau hubungi langsung:</p>
-                    <p>Email: <span class="font-medium">goeks@gmail.com</span></p>
-                    <p>Telepon: <span class="font-medium">+62</span></p>
+                    <p>Email: <span class="font-medium">rivencakep@gmail.com</span></p>
+                    <p>Telepon: <span class="font-medium">+62 881-0267-35919</span></p>
                 </div>
             </div>
         </div>

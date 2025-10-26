@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\KontakController;
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/test', function () {
@@ -25,3 +27,7 @@ Route::get('/daftar', function () {
 Route::get('/masuk', function () {
     return view('account.masuk.masuk');
 });
+
+
+// kontak
+Route::post('/kontak', [ContactController::class, 'store'])->name('contact.store');

@@ -3,10 +3,30 @@ const form = document.getElementById("registerForm");
 form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    const name = form.name.value;
-    const email = form.email.value;
-    const password = form.password.value;
-    const password_confirmation = form.confirm.value;
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const password = form.password.value.trim();
+    const password_confirmation = form.confirm.value.trim();
+
+    if (!name || !email || !password || !password_confirmation) {
+        Swal.fire({
+            icon: "warning",
+            title: "Oops!",
+            text: "Semua kolom wajib diisi",
+            confirmButtonColor: "#FD4E0F",
+        });
+        return;
+    }
+
+    // Tampilkan loading SweetAlert
+    Swal.fire({
+        title: "Membuat akun...",
+        text: "Mohon tunggu sebentar",
+        allowOutsideClick: false,
+        didOpen: () => {
+            Swal.showLoading();
+        },
+    });
 
     try {
         const res = await fetch("/api/daftar", {

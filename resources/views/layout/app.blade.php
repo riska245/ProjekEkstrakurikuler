@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title', 'GoEks - Ekstrakurikuler')</title>
     @vite('resources/css/app.css')
     @vite('resources/js/app.js')
@@ -11,7 +12,8 @@
     <!-- Google Font: Poppins (Dribbble-like) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 
     <!-- optional: tetap pakai Playfair untuk tagline italic -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
@@ -20,7 +22,7 @@
     <link rel="stylesheet" href="{{ asset('css/page/tentang/tentang.css') }}">
 </head>
 
-<body class="antialiased bg-gray-100 text-gray-800 min-h-screen flex flex-col">
+<body class="antialiased  bg-[#FD4E0F]/10  text-gray-800 min-h-screen flex flex-col">
     <!-- Preloader -->
     <div id="preloader" class="fixed inset-0 z-50 flex items-center justify-center bg-white">
         <div class="flex flex-col items-center space-y-4">
@@ -69,14 +71,15 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                     </svg>
-                    <span>Pendaftaran</span>
+                    <span>Gabung Ekskul</span>
                 </a>
             </nav>
 
             <div class="auth-actions hidden md:flex items-center space-x-3">
                 <div id="guest-actions" class="hidden">
                     <a href="/daftar"
-                        class="bg-white text-[#FD4E0F] px-4 py-2 rounded-md font-medium border-2 trans border-white transition-colors duration-300 hover:bg-[#FD4E0F] hover:text-white">Daftar</a>
+                        class="bg-white text-[#FD4E0F] px-4 py-2 rounded-md font-medium border-2 trans border-white transition-colors duration-300 hover:bg-[#FD4E0F] hover:text-white">Buat
+                        Akun</a>
                     <a href="/masuk"
                         class="bg-[#FD4E0F] text-white px-4 py-2 rounded-md font-medium border-2 border-white hover:bg-white transition-colors duration-300 hover:text-[#FD4E0F]">Masuk</a>
                 </div>
@@ -164,7 +167,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                     </svg>
-                    <span class="transition-transform duration-300 group-hover:translate-x-1">Pendaftaran</span>
+                    <span class="transition-transform duration-300 group-hover:translate-x-1">Gabung Ekskul</span>
                 </a>
 
                 <div id="mobile-user-actions" class="hidden flex-col mt-4 space-y-2">
@@ -185,7 +188,7 @@
                 <div id="mobile-guest-actions" class="flex flex-col mt-4 space-y-2">
                     <a href="/daftar"
                         class="block bg-white text-[#FD4E0F] px-3 py-2 rounded-md text-center border-2 border-white transition-colors duration-300 hover:bg-[#FD4E0F] hover:text-white">
-                        Daftar
+                        Buat Akun
                     </a>
                     <a href="/masuk"
                         class="block bg-[#FD4E0F] text-white px-3 py-2 rounded-md text-center border-2 border-white transition-colors duration-300 hover:bg-white hover:text-[#FD4E0F]">
@@ -198,7 +201,8 @@
     </header>
 
     <!-- Body -->
-    <main class="grow container mx-auto px-4" id="content">
+
+    <main class="grow container mx-auto px-4 " id="content">
         @yield('content')
     </main>
 
@@ -209,7 +213,7 @@
             <!-- Logo & Teks -->
             <div class="text-sm">
                 <p>&copy; {{ date('Y') }}
-                    <span class="font-semibold text-[#FD4E0F]">GoEks</span>. All Rights Reserved.
+                    <span class="font-semibold text-[#FD4E0F]">GoEks</span>. Semua hak dilindungi.
                 </p>
             </div>
 
@@ -253,5 +257,6 @@
     </footer>
 </body>
 <script src="{{ asset('js/layout.js') }}"></script>
+<script src="{{ asset('js/page/tentang.js') }}"></script>
 
 </html>
