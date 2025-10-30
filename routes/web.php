@@ -1,33 +1,20 @@
 <?php
 
-use App\Http\Controllers\KontakController;
 use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 
-// Route::get('/test', function () {
-//     return view('layout.app');
-// });
+// Halaman umum
+Route::view('/', 'page.beranda.beranda');
+Route::view('/beranda', 'page.beranda.beranda');
+Route::view('/tentang-kami', 'page.tentang.tentang');
 
-// page
-Route::get('/', function () {
-    return view('page.beranda.beranda');
-});
-Route::get('/beranda', function () {
-    return view('page.beranda.beranda');
-});
-Route::get('/tentang-kami', function () {
-    return view('page.tentang.tentang');
-});
+// Halaman akun
+// Hanya tampil jika user BELUM login (frontend nanti cek token)
+Route::view('/masuk', 'account.masuk.masuk');
+Route::view('/daftar', 'account.daftar.daftar');
 
+// Halaman setelah login
+Route::view('/beranda', 'page.beranda.beranda');
 
-// account
-Route::get('/daftar', function () {
-    return view('account.daftar.daftar');
-});
-Route::get('/masuk', function () {
-    return view('account.masuk.masuk');
-});
-
-
-// kontak
+// Kontak
 Route::post('/kontak', [ContactController::class, 'store'])->name('contact.store');

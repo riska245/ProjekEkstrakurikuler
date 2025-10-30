@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title', 'GoEks - Ekstrakurikuler')</title>
-    @vite('resources/css/app.css')
-    @vite('resources/js/app.js')
+    @vite(['resources/js/app.js', 'resources/css/app.css'])
+    {{-- @cspMetaTag --}}
 
     <!-- Google Font: Poppins (Dribbble-like) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -87,7 +87,7 @@
 
                     <span id="user-name" class="text-white font-medium truncate"></span>
 
-                    <button onclick="logout()"
+                    <button data-logout
                         class=" cursor-pointer flex items-center gap-1.5 bg-[#FD4E0F] text-white px-4 py-2 rounded-md border-2 border-white transition-all duration-300 hover:bg-white hover:text-[#FD4E0F] focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50">
                         <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
                             class="h-5 w-5">
@@ -173,7 +173,7 @@
                 <div id="mobile-user-actions" class="hidden flex-col mt-4 space-y-2">
                     <span id="mobile-user-name"
                         class="block text-center text-white font-medium px-3 py-2 rounded-md truncate min-h-8"></span>
-                    <button onclick="logout()"
+                    <button data-logout
                         class="w-full flex items-center justify-center gap-2 bg-[#FD4E0F] text-white px-3 py-2 rounded-md text-center border-2 border-white transition-colors duration-300 hover:bg-white hover:text-[#FD4E0F] cursor-pointer">
                         <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
                             class="h-5 w-5">

@@ -1,4 +1,27 @@
 const loginForm = document.getElementById("loginForm");
+/**
+ * Initialize preloader transition
+ */
+
+function initializePreloader() {
+    window.addEventListener("load", () => {
+        const preloader = document.getElementById("preloader");
+        const content = document.getElementById("content");
+
+        if (!preloader || !content) {
+            console.warn("Preloader elements not found");
+            return;
+        }
+
+        preloader.style.opacity = "0";
+        preloader.style.transition = "opacity 0.6s ease";
+
+        setTimeout(() => {
+            preloader.style.display = "none";
+            content.classList.remove("opacity-0");
+        }, 600);
+    });
+}
 
 loginForm.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -70,3 +93,18 @@ loginForm.addEventListener("submit", async (e) => {
         });
     }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const token = localStorage.getItem("auth_token");
+
+    // Cek apakah user sudah login
+    if (token) {
+        // Pastikan cuma redirect kalau user sekarang di halaman login/daftar
+        const currentPath = window.location.pathname;
+        if (currentPath === "/masuk" || currentPath === "/daftar") {
+            window.location.replace("/beranda");
+        }
+    }
+});
+
+initializePreloader();

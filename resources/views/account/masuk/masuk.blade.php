@@ -5,11 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GoEks - Masuk</title>
-    @vite('resources/css/app.css')
-    @vite('resources/js/app.js')
+    @vite(['resources/js/app.js', 'resources/css/app.css'])
+    {{-- @cspMetaTag --}}
 </head>
 
-<body class="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900 transition-colors duration-500">
+<body class="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900 transition-colors duration-500"
+    id="content">
+    <!-- Preloader -->
+    <div id="preloader" class="fixed inset-0 z-50 flex items-center justify-center bg-white">
+        <div class="flex flex-col items-center space-y-4">
+            <!-- Animasi lingkaran -->
+            <div class="w-12 h-12 border-4 border-[#FD4E0F] border-t-transparent rounded-full animate-spin"></div>
+            <p class="text-[#FD4E0F] font-semibold">Memuat...</p>
+        </div>
+    </div>
     <div class="w-full max-w-md bg-white dark:bg-gray-800 shadow-lg rounded-2xl p-8 mx-4 transition-all duration-500">
         <h2 class="text-2xl font-bold text-center text-[#FD4E0F] dark:text-white mb-6">Masuk ke Akun</h2>
 
